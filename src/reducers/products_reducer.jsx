@@ -7,11 +7,20 @@ import {
   GET_SINGLE_PRODUCT_BEGIN,
   GET_SINGLE_PRODUCT_SUCCESS,
   GET_SINGLE_PRODUCT_ERROR,
-} from '../actions'
+} from '../actions';
 
 const products_reducer = (state, action) => {
-  return state
-  throw new Error(`No Matching "${action.type}" - action type`)
-}
+  const { type, paylod } = action;
+  switch (type) {
+    case SIDEBAR_OPEN:
+      return { ...state, isSidebarOpen: true };
+    case SIDEBAR_CLOSE:
+      return { ...state, isSidebarOpen: false };
+    default:
+      break;
+  }
+  return state;
+  throw new Error(`No Matching "${action.type}" - action type`);
+};
 
-export default products_reducer
+export default products_reducer;
