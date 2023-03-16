@@ -7,11 +7,41 @@ import {
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
-} from '../actions'
+} from '../actions';
 
 const filter_reducer = (state, action) => {
-  return state
-  throw new Error(`No Matching "${action.type}" - action type`)
-}
+  const { type, payload } = action;
+  switch (type) {
+    case LOAD_PRODUCTS:
+      return {
+        ...state,
+        filtered_products: [...payload],
+        all_products: [...payload],
+      };
+    case SET_LISTVIEW:
+      return {
+        ...state,
+        grid_view: false,
+      };
+    case SET_GRIDVIEW:
+      return {
+        ...state,
+        grid_view: true,
+      };
+    case UPDATE_SORT:
+      return {
+        ...state,
+        sort: payload,
+      };
+    case SORT_PRODUCTS:
+      return {
+        ...state,
+        filtered_products: payload,
+      };
 
-export default filter_reducer
+    default:
+      throw new Error(`No Matching "${action.type}" - action type`);
+  }
+};
+
+export default filter_reducer;

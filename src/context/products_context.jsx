@@ -34,7 +34,7 @@ export const ProductsProvider = ({ children }) => {
   };
 
   const closeSidebar = () => {
-    dispatch({ type: SIDEBAR_CLOSE });
+    // dispatch({ type: SIDEBAR_CLOSE });
   };
 
   const fetchProducts = async () => {
