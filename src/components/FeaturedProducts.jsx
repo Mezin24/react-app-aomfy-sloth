@@ -7,7 +7,6 @@ import Product from './Product';
 
 const FeaturedProducts = () => {
   const {
-    products,
     products_loading: loading,
     products_error: error,
     featured_products: featured,
