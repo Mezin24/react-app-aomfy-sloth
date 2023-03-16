@@ -1,3 +1,8 @@
-export const formatPrice = () => {}
+export const formatPrice = (amount) => {
+  return amount.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+};
 
-export const getUniqueValues = () => {}
+export const getUniqueValues = () => {};
