@@ -10,4 +10,6 @@ export const formatPrice = (amount) => {
   }).format(amount / 100);
 };
 
-export const getUniqueValues = () => {};
+export const getUniqueValues = (arr, key) => {
+  return ['all', ...new Set(arr.map((item) => item[key]).flat())];
+};
