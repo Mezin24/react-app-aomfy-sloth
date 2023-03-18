@@ -20,7 +20,11 @@ const CartContent = () => {
         <Link to='/products' className='link-btn'>
           continue shopping
         </Link>
-        <button className='link-btn clear-btn' type='button'>
+        <button
+          className='link-btn clear-btn'
+          type='button'
+          onClick={clearCart}
+        >
           Clear shopping cart
         </button>
       </div>
